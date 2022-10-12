@@ -1,0 +1,29 @@
+TODO: UML2Java - Shopping Cart
+-----------------------------------------------------------
+***********
+* DEUTSCH *
+***********
+
+1. Class Diagramm
+	Das File "ClassDiagram.png" bzw. "CLassDiagram_landscape.png" gibt
+    Ihnen die Struktur der Implementierung vor.
+    Bitte, setzen Sie das Klassendiagramm in Java Klassen um und implementieren Sie diese.
+    Das Verhalten lässt sich durch die Unit-Tests ableiten.
+
+    Überprüfen Sie Ihre Implementierung anhand der gegebenen
+    Test-Klassen "ProductTest", "CategoryTest",
+    "CategoryHierarchyTest" und "ShoppingCartTest".
+
+***********
+* ENGLISH *
+***********
+
+1. Class diagram
+    The file "ClassDiagram.png" and "ClassDiagram_landscape.png" respectively
+    represents the structure for your implementation.
+    Your tasks is to convert the class diagrams into Java classes and implement its code.
+    The behavior is defined through the executable specification - the unit-tests ;-)
+
+    Check your implmentation by means of the give unit test classes
+    "ProductTest", "CategoryTest", "CategoryHierarchyTest", and
+    "ShoppingCartTest".

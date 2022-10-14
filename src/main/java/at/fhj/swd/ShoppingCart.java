@@ -9,6 +9,7 @@ public class ShoppingCart {
 
     public ShoppingCart() {
         this.products = new ArrayList<>();
+        this.taxrate = 20;
     }
 
     public List<Product> getProducts() {
@@ -32,6 +33,6 @@ public class ShoppingCart {
     }
 
     public long calculateTax(){
-        return calculateTotalSum() * taxrate;
+        return calculateTotalSum() * taxrate /100;
     }
 }

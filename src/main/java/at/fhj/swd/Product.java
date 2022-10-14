@@ -7,24 +7,28 @@ public class Product extends Entity{
     private Category category;
 
     protected Product() {
+        this.title = "";
     }
 
     public Product(int id, String title, long price) {
         this.id = id;
-        this.price = price;
-        setTitle(title);
-    }
 
-    public Product(String title, long price) {
-        this.id = getNextId();
+        if(price < 0)
+            throw new IllegalArgumentException();
         this.price = price;
+
+        if (title == null)
+            throw new NullPointerException();
         this.title = title;
     }
 
+    public Product(String title, long price) {
+        this(getNextId(), title, price);
+    }
+
     public Product(Product product) {
-        this.id = product.getId();
-        this.price = product.getPrice();
-        this.title = product.getTitle();
+        this(product.title, product.price);
+        this.category = product.category;
     }
 
     public int getId() {
@@ -48,9 +52,6 @@ public class Product extends Entity{
     }
 
     public Product setTitle(String title) {
-        if (title == null)
-            throw new NullPointerException();
-
         return new Product(title, this.price);
     }
 
@@ -64,17 +65,12 @@ public class Product extends Entity{
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", price=" + price +
-                ", title='" + title + '\'' +
-                ", category=" + category +
-                '}';
+        return getId() + "," + getTitle() + "," + (double)getPrice()/100;
     }
 
     @Override
     public String toXml() {
         return "<product id=\"" + this.getId() + "\" title=\"" + this.getTitle()
-                + "\" price=\"" + this.getPrice() +  "\"/>";
+                + "\" price=\"" + ((double) this.getPrice())/100 +  "\"/>";
     }
 }
